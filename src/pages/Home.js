@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import { Link } from "react-router-dom";
-import Appliance from "../data/Appliance .jpeg"
+import Hero from "../components/Hero";
 
 const Home = () => {
   const { products } = useContext(ProductContext);
   return (
     <div className="bg-slate-200 pt-[80px]">
-      <img src={Appliance} alt="hero" className="w-full md:h-[800px] bg-white  md:object-fit"/>
+      <Hero/>
       <section className="py-16">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[30px]">
