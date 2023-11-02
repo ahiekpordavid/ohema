@@ -1,14 +1,25 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
 import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
 import { IoMdArrowForward } from "react-icons/io";
+import { toast } from 'react-toastify';
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
   const { cart, clearCart,total, itemNumber} = useContext(CartContext);
+  const navigate = useNavigate();
 
+  const handleCheckout = () => {
+    if(cart.length > 0){
+      localStorage.setItem("cartItems", JSON.stringify(cart));
+      navigate('/checkout');
+    }else{
+      toast.info("Add Item to Cart")
+    }
+
+  };
 
   return (
     <div
@@ -42,7 +53,7 @@ const Sidebar = () => {
         </div>
 
         <div className="mt-10">
-          <Link to={'./'} className="flex bg-primary p-5 rounded-sm text-white justify-center ">Checkout</Link>
+          <button onClick={handleCheckout} className="flex bg-primary p-5 w-full rounded-sm text-white justify-center ">Checkout</button>
         </div>
       </div>
     </div>
