@@ -23,14 +23,14 @@ const CartProvider = ({ children }) => {
     }
   },[cart])
 
-  const addToCart = (record, name, id) => {
+  const addToCart = (record, modelNumber, id) => {
     const newItem = { ...record, amount: 1, id };
     const cartItem = cart.find((item) => {
-      return item.name === name;
+      return item.modelNumber === modelNumber;
     });
     if (cartItem) {
       const newCart = [...cart].map((item) => {
-        if (item.name === name) {
+        if (item.modelNumber === modelNumber) {
           return { ...item, amount: cartItem.amount + 1, id: cartItem.id };
         } else {
           return item;
@@ -42,9 +42,9 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  const removeFromCart = (name) => {
+  const removeFromCart = (modelNumber) => {
     const newCart = cart.filter((item) => {
-      return item.name !== name;
+      return item.modelNumber !== modelNumber;
     });
     setCart(newCart);
   };
@@ -53,18 +53,18 @@ const CartProvider = ({ children }) => {
     setCart([]);
   };
 
-  const increaseAmount = (name) => {
-    const cartItem = cart.find((item) => item.name === name);
-    addToCart(cartItem, name);
+  const increaseAmount = (modelNumber) => {
+    const cartItem = cart.find((item) => item.modelNumber === modelNumber);
+    addToCart(cartItem, modelNumber);
   };
 
-  const decreaseAmount = (name) => {
+  const decreaseAmount = (modelNumber) => {
     const cartItem = cart.find((item) => {
-      return item.name === name;
+      return item.modelNumber === modelNumber;
     });
     if (cartItem) {
       const newCart = cart.map((item) => {
-        if (item.name === name) {
+        if (item.modelNumber === modelNumber) {
           return { ...item, amount: cartItem.amount - 1 };
         } else {
           return item;
@@ -73,7 +73,7 @@ const CartProvider = ({ children }) => {
       setCart(newCart);
     }
     if (cartItem.amount < 2) {
-      removeFromCart(name);
+      removeFromCart(modelNumber);
     }
   };
 

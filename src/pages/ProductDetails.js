@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import { CartContext } from "../contexts/CartContext";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { SidebarContext } from "../contexts/SidebarContext";
-import { Table } from "antd";
+import { Breadcrumb, Table, Tabs } from "antd";
 
 const ProductDetails = () => {
-  const {  handleClose } = useContext(SidebarContext);
+  const { handleClose } = useContext(SidebarContext);
   const { products } = useContext(ProductContext);
   const { addToCart } = useContext(CartContext);
   const { id } = useParams();
@@ -18,31 +18,36 @@ const ProductDetails = () => {
       title: "Model",
       key: "name",
       width: "25%",
-      render:(record)=> record?.name
+      render: (record) => record?.modelNumber,
     },
     {
       title: "Capacity/Size",
       key: "capacity",
       width: "25%",
-      render:(record)=> record?.capacity
+      render: (record) => record?.capacity,
     },
     {
       title: "Specification",
       key: "specification",
       width: "25%",
-      render:(record)=> record?.specification
+      render: (record) => record?.specification,
     },
     {
       title: "Price",
       key: "price",
       width: "25%",
-      render:(record)=> record?.price
+      render: (record) => record?.price,
     },
     {
       key: "action",
       render: (record) => {
         return (
-          <div className="border p-3 rounded-sm cursor-pointer hover:text-blue-700" onClick={()=>{addToCart(record,record?.name,id)}}>
+          <div
+            className="border p-3 rounded-sm cursor-pointer hover:text-blue-700"
+            onClick={() => {
+              addToCart(record, record?.modelNumber, id);
+            }}
+          >
             <p>Add</p>
           </div>
         );
@@ -51,9 +56,19 @@ const ProductDetails = () => {
   ];
 
   return (
-    <div className=" bg-slate-200 h-full pt-[80px]"onClick={handleClose}>
+    <div className=" bg-slate-200 h-full pt-[80px]" onClick={handleClose}>
       <section className="py-16">
         <div className="container mx-auto">
+          <Breadcrumb className="mb-5"
+            items={[
+              {
+                title: <Link to={"/"}>Home</Link>,
+              },
+              {
+                title: filteredProduct.id,
+              },
+            ]}
+          />
           {filteredProduct ? (
             <div className="flex flex-col">
               <div className="flex">
@@ -67,10 +82,35 @@ const ProductDetails = () => {
                 </p>
               </div>
               <div className="flex flex-col">
-                <p className="text-2xl font-semibold mt-[50px] underline mb-10">
-                  CATEGORIES
+                <p className="text-xl font-semibold mt-[50px] underline mb-5 uppercase">
+                  Brands
                 </p>
                 <div>
+                  {filteredProduct?.brands?.map((brand, index) => (
+                    <div className="mb-[30px]" key={brand?.brandName}>
+                      <Tabs type="card" defaultActiveKey="1">
+                        <Tabs.TabPane
+                          tab={brand.brandName}
+                          key={brand.brandName}
+                        >
+                          {brand?.models?.map((brand) => (
+                            <div className="mb-[30px]" key={brand?.name}>
+                              <p className=" p-5 rounded-md text-xl font-bold">
+                                {brand.name}
+                              </p>
+                              <Table
+                                columns={columns}
+                                dataSource={brand.model}
+                                pagination={false}
+                              />
+                            </div>
+                          ))}
+                        </Tabs.TabPane>
+                      </Tabs>
+                    </div>
+                  ))}
+                </div>
+                {/* <div>
                   {filteredProduct?.brands?.map((brand) => (
                     <div className="mb-[30px]" key={brand?.name}>
                       <p className=" p-5 rounded-md text-xl font-bold">
@@ -83,7 +123,7 @@ const ProductDetails = () => {
                       />
                     </div>
                   ))}
-                </div>
+                </div> */}
               </div>
             </div>
           ) : (
