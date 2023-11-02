@@ -5,6 +5,7 @@ export const Products = [
     brands: [
       {
         name: "FHD SATELLITE",
+        image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
         model: [
           {
             name: "32D3200",
@@ -22,6 +23,7 @@ export const Products = [
       },
       {
         name: "FHD SMART ANDROID",
+        image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
         model: [
           {
             name: "32S5400A",
@@ -39,6 +41,7 @@ export const Products = [
       },
       {
         name: "UHD 4K SMART ANDROID",
+        image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
         model: [
           {
             name: "43P635",
@@ -88,6 +91,7 @@ export const Products = [
       },
       {
         name: "QLED 4K SMART ANDROID",
+        image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
         model: [
           {
             name: "50C645",
@@ -135,6 +139,7 @@ export const Products = [
     brands: [
       {
         name: "SOUND BAR",
+        image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
         model: [
           {
             name: "TS8111-GHA",
@@ -173,6 +178,7 @@ export const Products = [
     brands: [
       {
         name: "SPLIT R410",
+        image:"https://innovateelectricalsupplies.co.uk/wp-content/uploads/2018/04/multi-split-air-conditioning-unit-36000btu.jpg",
         model: [
           {
             name: "TAC-12CSA/XA51",
@@ -199,6 +205,7 @@ export const Products = [
       },
       {
         name: "SPLIT INVERTER R410",
+        image:"https://innovateelectricalsupplies.co.uk/wp-content/uploads/2018/04/multi-split-air-conditioning-unit-36000btu.jpg",
         model: [
           {
             name: "TAC-12CSA/XA73I",
@@ -225,6 +232,7 @@ export const Products = [
       },
       {
         name: "SPLIT INVERTER R410- Black mirror",
+        image:"https://innovateelectricalsupplies.co.uk/wp-content/uploads/2018/04/multi-split-air-conditioning-unit-36000btu.jpg",
         model: [
           {
             name: "TAC-12CSA/XA82I",
@@ -251,6 +259,7 @@ export const Products = [
       },
       {
         name: "ROUND FLOOR STANDING - R32",
+        image:"https://innovateelectricalsupplies.co.uk/wp-content/uploads/2018/04/multi-split-air-conditioning-unit-36000btu.jpg",
         model: [
           {
             name: "TAC-18CFD/MCI",
@@ -270,6 +279,7 @@ export const Products = [
       },
       {
         name: "FLOOR STANDING R410",
+        image:"https://innovateelectricalsupplies.co.uk/wp-content/uploads/2018/04/multi-split-air-conditioning-unit-36000btu.jpg",
         model: [
           {
             name: "TAC-36CFA/C",
@@ -306,6 +316,7 @@ export const Products = [
       },
       {
         name: "TOP MOUNT",
+        image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/fridges-300x300.jpg",
         model: [
           {
             name: "F118TM",
@@ -323,6 +334,7 @@ export const Products = [
       },
       {
         name: "BOTTOM MOUNT",
+        image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/fridges-300x300.jpg",
         model: [
           {
             name: "F163BF",
@@ -340,6 +352,7 @@ export const Products = [
       },
       {
         name: "SIDE BY SIDE",
+        image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/fridges-300x300.jpg",
         model: [
           {
             name: "P650SBN",
@@ -363,6 +376,7 @@ export const Products = [
     brands: [
       {
         name: "CHEST",
+        image:"https://th.bing.com/th/id/OIP.gLGfBR61iFwF5di28vUW5AAAAA?pid=ImgDet&w=474&h=474&rs=1",
         model: [
           {
             name: "F208CF",
@@ -388,6 +402,7 @@ export const Products = [
     brands: [
       {
         name: "TWIN TOP",
+        image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/washers-300x300.jpg",
         model: [
           {
             name: "F207TT",
@@ -400,6 +415,7 @@ export const Products = [
       },
       {
         name: "TOP LOAD",
+        image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/washers-300x300.jpg",
         model: [
           {
             name: "F708TL",
@@ -426,6 +442,7 @@ export const Products = [
       },
       {
         name: "FRONT LOAD",
+        image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/washers-300x300.jpg",
         model: [
           {
             name: "P608FL",

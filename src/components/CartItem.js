@@ -7,6 +7,7 @@ import { CartContext } from "../contexts/CartContext";
 const CartItem = ({ item }) => {
   const { removeFromCart,increaseAmount,decreaseAmount } = useContext(CartContext);
   const { name, capacity, specification, price, amount, id } = item;
+
   return (
     <div className="border-b py-2 mt-2 flex flex-row items-center">
       <Link to={`/product/${id}`}>

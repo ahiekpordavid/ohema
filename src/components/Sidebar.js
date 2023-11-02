@@ -7,7 +7,8 @@ import { IoMdArrowForward } from "react-icons/io";
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
-  const { cart, clearCart,total } = useContext(CartContext);
+  const { cart, clearCart,total, itemNumber} = useContext(CartContext);
+
 
   return (
     <div
@@ -17,7 +18,7 @@ const Sidebar = () => {
     >
       <div className="flex justify-between items-center py-6 border-b">
         <div className="text-sm font-semibold uppercase">
-          Selected Items (0)
+          Selected Items ({itemNumber})
         </div>
         <div
           className="curser-pointer w-8 h-8 flex justify-center items-center"

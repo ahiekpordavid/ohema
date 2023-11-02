@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
+import { SidebarContext } from "../contexts/SidebarContext";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import { BsEye } from "react-icons/bs";
 
 const Home = () => {
   const { products } = useContext(ProductContext);
+  const {  handleClose } = useContext(SidebarContext);
   return (
-    <div className="bg-slate-200 pt-[80px]">
+    <div className="bg-slate-200 pt-[80px] "onClick={handleClose}>
       <Hero />
       <section className="py-16">
         <div className="container mx-auto">

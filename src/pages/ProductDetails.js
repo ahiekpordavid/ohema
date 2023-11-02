@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import { CartContext } from "../contexts/CartContext";
 import { useParams } from "react-router-dom";
+import { SidebarContext } from "../contexts/SidebarContext";
 import { Table } from "antd";
 
 const ProductDetails = () => {
+  const {  handleClose } = useContext(SidebarContext);
   const { products } = useContext(ProductContext);
   const { addToCart } = useContext(CartContext);
   const { id } = useParams();
@@ -14,33 +16,33 @@ const ProductDetails = () => {
   const columns = [
     {
       title: "Model",
-      dataIndex: "name",
       key: "name",
       width: "25%",
+      render:(record)=> record?.name
     },
     {
       title: "Capacity/Size",
-      dataIndex: "capacity",
       key: "capacity",
       width: "25%",
+      render:(record)=> record?.capacity
     },
     {
       title: "Specification",
-      dataIndex: "specification",
       key: "specification",
       width: "25%",
+      render:(record)=> record?.specification
     },
     {
       title: "Price",
-      dataIndex: "price",
       key: "price",
       width: "25%",
+      render:(record)=> record?.price
     },
     {
       key: "action",
       render: (record) => {
         return (
-          <div className="border p-3 rounded-sm cursor-pointer hover:text-blue-700" onClick={()=>{addToCart(record,record.name,id)}}>
+          <div className="border p-3 rounded-sm cursor-pointer hover:text-blue-700" onClick={()=>{addToCart(record,record?.name,id)}}>
             <p>Add</p>
           </div>
         );
@@ -49,7 +51,7 @@ const ProductDetails = () => {
   ];
 
   return (
-    <div className=" bg-slate-200 h-full pt-[80px]">
+    <div className=" bg-slate-200 h-full pt-[80px]"onClick={handleClose}>
       <section className="py-16">
         <div className="container mx-auto">
           {filteredProduct ? (
