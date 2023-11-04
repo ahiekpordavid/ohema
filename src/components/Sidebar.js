@@ -15,6 +15,7 @@ const Sidebar = () => {
     if(cart.length > 0){
       localStorage.setItem("cartItems", JSON.stringify(cart));
       navigate('/checkout');
+      handleClose()
     }else{
       toast.info("Add Item to Cart")
     }

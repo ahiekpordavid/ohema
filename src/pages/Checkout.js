@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
 import CheckoutList from "../components/CheckoutList";
 import { SidebarContext } from "../contexts/SidebarContext";
-import { Breadcrumb,  Select } from "antd";
+import { Breadcrumb, Select } from "antd";
 import { Link } from "react-router-dom";
 import { Button, Form, Input } from "antd";
 
@@ -14,9 +14,9 @@ const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState(null);
   const [showMonthsDropdown, setShowMonthsDropdown] = useState(false);
 
-  const handlePaymentMethodChange = value => {
+  const handlePaymentMethodChange = (value) => {
     setPaymentMethod(value);
-    setShowMonthsDropdown(value === 'FISERVICES');
+    setShowMonthsDropdown(value === "FISERVICES");
   };
 
   return (
@@ -147,9 +147,27 @@ const Checkout = () => {
                   </Form.Item>
 
                   {paymentMethod === "WALLETSERVICES" && (
-                    <Form.Item label="Cash URL">
-                      <Input placeholder="URL to Kowri" />
-                    </Form.Item>
+                    <div className="flex flex-row gap-1">
+                      <Form.Item label="Cash URL" className=" w-full">
+                        <Input placeholder="URL to Kowri" />
+                      </Form.Item>
+                      <Form.Item
+                        label="Reference"
+                        className=" w-full"
+                        name="reference"
+                        rules={[
+                          {
+                            required: true,
+                            message: "Please enter reference",
+                          },
+                          {
+                            type: "string",
+                          },
+                        ]}
+                      >
+                        <Input placeholder="Please enter reference" />
+                      </Form.Item>
+                    </div>
                   )}
 
                   {showMonthsDropdown && (
