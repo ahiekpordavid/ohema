@@ -6,10 +6,8 @@ import ProductDetails from "./pages/ProductDetails";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Checkout from "./pages/Checkout";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
@@ -17,14 +15,14 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/product/:id" element={<ProductDetails/>} />
-          <Route path="/checkout" element={<Checkout/>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
-        <Sidebar/>
+        <Sidebar />
         <Footer />
       </BrowserRouter>
-    <ToastContainer />
+      <ToastContainer />
     </div>
   );
 };

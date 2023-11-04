@@ -21,11 +21,13 @@ const Home = () => {
                   key={product.id}
                 >
                   <h5 className="m-5 font-bold text-2xl">{product.id}</h5>
+                  <Link
+                      to={`product/${product.id}`}>
                   <img
                     className="w-ful h-[300px] object-cover hover:scale-90 transition duration-300"
                     src={product.image}
                     alt={product.id}
-                  />
+                  /></Link>
                   <Link
                     to={`product/${product.id}`}
                     className="m-5 hover:text-blue-600"

@@ -1,8 +1,10 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { SidebarContext } from "../contexts/SidebarContext";
 
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
+  const { isOpen, setIsOpen } = useContext(SidebarContext);
   const [cart, setCart] = useState([]);
   const [itemNumber, setItemNumber] = useState(0);
   const [total, setTotal] = useState(0);
@@ -12,6 +14,11 @@ const CartProvider = ({ children }) => {
         return accumulator + currentItem.price * currentItem.amount;
       },0)
       setTotal(total)
+      if (cart.length > 0) {
+        setIsOpen(true); 
+      } else {
+        setIsOpen(false); 
+      }
   },[cart])
 
   useEffect(()=>{

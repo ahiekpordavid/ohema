@@ -6,7 +6,7 @@ import { SidebarContext } from "../contexts/SidebarContext";
 import { Breadcrumb, Table, Tabs } from "antd";
 
 const ProductDetails = () => {
-  const { handleClose } = useContext(SidebarContext);
+  const { handleClose,isOpen, setIsOpen } = useContext(SidebarContext);
   const { products } = useContext(ProductContext);
   const { addToCart } = useContext(CartContext);
   const { id } = useParams();
@@ -110,20 +110,6 @@ const ProductDetails = () => {
                     </div>
                   ))}
                 </div>
-                {/* <div>
-                  {filteredProduct?.brands?.map((brand) => (
-                    <div className="mb-[30px]" key={brand?.name}>
-                      <p className=" p-5 rounded-md text-xl font-bold">
-                        {brand.name}
-                      </p>
-                      <Table
-                        columns={columns}
-                        dataSource={brand.model}
-                        pagination={false}
-                      />
-                    </div>
-                  ))}
-                </div> */}
               </div>
             </div>
           ) : (
