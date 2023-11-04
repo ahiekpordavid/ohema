@@ -35,7 +35,7 @@ const Checkout = () => {
         />
         <div className="flex justify-center">
           <div className="flex flex-row bg-white">
-            <div className="flex flex-col border-r-2">
+            <div className="flex flex-col border-r-2 border-dashed">
               <div className="flex  flex-col gap-y-2 h-[520px] w-[450px]  overflow-y-auto overflow-x-hidden border p-3 border-gray-50  bg-white mr-5">
                 {cart.map((item) => {
                   return <CheckoutList item={item} key={item.name} />;
@@ -112,7 +112,7 @@ const Checkout = () => {
                     rules={[
                       {
                         required: true,
-                        message: "Please input your full name!",
+                        message: "Please input your full address!",
                       },
                     ]}
                   >
@@ -120,7 +120,7 @@ const Checkout = () => {
                   </Form.Item>
 
                   <Form.Item name="address2" label="Street Name">
-                    <Input />
+                    <Input  placeholder="Optional"/>
                   </Form.Item>
 
                   <Form.Item
