@@ -6,7 +6,7 @@ import { SidebarContext } from "../contexts/SidebarContext";
 import { Breadcrumb, Table, Tabs } from "antd";
 
 const ProductDetails = () => {
-  const { handleClose} = useContext(SidebarContext);
+  const { handleClose } = useContext(SidebarContext);
   const { products } = useContext(ProductContext);
   const { addToCart } = useContext(CartContext);
   const { id } = useParams();
@@ -59,7 +59,8 @@ const ProductDetails = () => {
     <div className=" bg-slate-200 h-full pt-[80px]" onClick={handleClose}>
       <section className="py-16">
         <div className="container mx-auto">
-          <Breadcrumb className="mb-5"
+          <Breadcrumb
+            className="mb-5"
             items={[
               {
                 title: <Link to={"/"}>Home</Link>,
@@ -81,14 +82,13 @@ const ProductDetails = () => {
                   {filteredProduct.id}
                 </p>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-5">
                 <p className="text-xl font-semibold mt-[50px] underline mb-5 uppercase">
                   Brands
                 </p>
                 <div>
-                  {filteredProduct?.brands?.map((brand, index) => (
-                    <div className="mb-[30px]" key={brand?.brandName}>
-                      <Tabs type="card" defaultActiveKey="1">
+                  <Tabs type="card" animated={false} defaultActiveKey="1">
+                    {filteredProduct?.brands?.map((brand, index) => (
                         <Tabs.TabPane
                           tab={brand.brandName}
                           key={brand.brandName}
@@ -106,9 +106,8 @@ const ProductDetails = () => {
                             </div>
                           ))}
                         </Tabs.TabPane>
-                      </Tabs>
-                    </div>
-                  ))}
+                    ))}
+                  </Tabs>
                 </div>
               </div>
             </div>

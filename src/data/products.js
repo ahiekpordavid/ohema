@@ -185,6 +185,175 @@ export const Products = [
           },
         ],
       },
+      {
+        brandName: "NASCO",
+        models:[
+          {
+            name: "LED FLAT",
+            model: [
+              {
+                modelNumber: "NAS-B32FB",
+                capacity: "32 inch",
+                specification: "FULL HD - HDMI - USB Movie - VGA - DVBT2-S2",
+                price: "1499",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"LED FLAT"
+              },
+              {
+                modelNumber: "NAS-J32FB",
+                capacity: "32 inch",
+                specification: "FULL HD - HDMI - USB Movie - VGA - DVBT2-S2",
+                price: "1499",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"LED FLAT"
+              },
+              {
+                modelNumber: "NAS-P40FBD",
+                capacity: "40 inch",
+                specification: "FULL HD - HDMI - USB Movie - VGA - DVBT2-S2",
+                price: "1999",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"LED FLAT"
+              },
+              {
+                modelNumber: "NAS-H42FB",
+                capacity: "40 inch",
+                specification: "FULL HD - HDMI - USB Movie - VGA - DVBT2-S2",
+                price: "2299",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"LED FLAT"
+              },
+              {
+                modelNumber: "NNAS-B43FB",
+                capacity: "43 inch",
+                specification: "FULL HD - HDMI - USB Movie - VGA - DVBT2-S2",
+                price: "2499",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"LED FLAT"
+              },
+              {
+                modelNumber: "NAS-J43FB",
+                capacity: "43 inch",
+                specification: "FULL HD - HDMI - USB Movie - VGA - DVBT2-S2",
+                price: "2499",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"LED FLAT"
+              },
+              {
+                modelNumber: "NAS-H43FB",
+                capacity: "43 inch",
+                specification: "FULL HD - HDMI - USB Movie - VGA - DVBT2-S2",
+                price: "2499",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"LED FLAT"
+              },
+              {
+                modelNumber: "NAS-J50FB",
+                capacity: "50 inch",
+                specification: "FULL HD - HDMI - USB Movie - VGA - DVBT2-S2",
+                price: "3399",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"LED FLAT"
+              },
+            ],
+          },
+          {
+            name: "LED FHD SMART",
+            model: [
+              {
+                modelNumber: "NAS-J32FB-AND",
+                capacity: "32 inch",
+                specification: "FULL HD - HDMI - USB Movie - VGA - DVBT2-S2-SMART ANDROID",
+                price: "2299",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"LED FHD SMART"
+              },
+              {
+                modelNumber: "NAS-J43FB-AND",
+                capacity: "43 inch",
+                specification: "FULL HD - HDMI - USB Movie - VGA - DVBT2-S2-SMART ANDROID",
+                price: "3499",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"LED FHD SMART"
+              },
+            ],
+          },
+          {
+            name: "UHD SMART FLAT",
+            model: [
+              {
+                modelNumber: "NAS-J50FUS-AND",
+                capacity: "50 inch",
+                specification: "UHD 4K- WIFI - HDMI X 4 - USB Movie - VGA - DVBT2- SMART ANDROID",
+                price: "4399",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"UHD SMART FLAT"
+              },
+              {
+                modelNumber: "NAS-J55FUS-AND",
+                capacity: "55 inch",
+                specification: "UHD 4K- WIFI - HDMI X 4 - USB Movie - VGA - DVBT2- SMART ANDROID",
+                price: "5299",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"UHD SMART FLAT"
+              },
+              {
+                modelNumber: "NAS-J65FUS-AND",
+                capacity: "65 inch",
+                specification: "UHD 4K- WIFI - HDMI X 4 - USB Movie - VGA - DVBT2- SMART ANDROID",
+                price: "6999",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"UHD SMART FLAT"
+              },
+              {
+                modelNumber: "NAS-J75FUS-AND",
+                capacity: "75 inch",
+                specification: "UHD 4K- WIFI - HDMI X 4 - USB Movie - VGA - DVBT2- SMART ANDROID",
+                price: "11999",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"UHD SMART FLAT"
+              },
+            ],
+          },
+          {
+            name: "UHD SMART FLAT- VIDAA",
+            model: [
+              {
+                modelNumber: "NAS-J50FUS-VID",
+                capacity: "50 inch",
+                specification: "",
+                price: "4799",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"UHD SMART FLAT- VIDAA"
+              },
+              {
+                modelNumber: "NAS-J55FUS-VID",
+                capacity: "55 inch",
+                specification: "",
+                price: "5499",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/tvs-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"UHD SMART FLAT- VIDAA"
+              }
+            ],
+          },
+        ]
+      }
     ],
   },
     // ================   AUDIO   =====================
