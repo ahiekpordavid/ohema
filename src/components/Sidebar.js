@@ -53,7 +53,7 @@ const Sidebar = () => {
         </div>
 
         <div className="mt-10 flex flex-col gap-3">
-          <Link to={'/'} className="flex bg-gray-500 p-5 w-full rounded-sm text-white justify-center">Continue Shopping</Link>
+          <Link to={'/'} className="flex bg-gray-500 p-5 w-full rounded-sm text-white justify-center" onClick={handleClose}>Continue Shopping</Link>
           <button onClick={handleCheckout} className="flex bg-primary p-5 w-full rounded-sm text-white justify-center ">Checkout</button>
         </div>
       </div>

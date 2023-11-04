@@ -6,7 +6,7 @@ import { SidebarContext } from "../contexts/SidebarContext";
 import { Breadcrumb, Table, Tabs } from "antd";
 
 const ProductDetails = () => {
-  const { handleClose,isOpen, setIsOpen } = useContext(SidebarContext);
+  const { handleClose} = useContext(SidebarContext);
   const { products } = useContext(ProductContext);
   const { addToCart } = useContext(CartContext);
   const { id } = useParams();

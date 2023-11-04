@@ -4,8 +4,11 @@ import { SidebarContext } from "../contexts/SidebarContext";
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  const { isOpen, setIsOpen } = useContext(SidebarContext);
-  const [cart, setCart] = useState([]);
+  const {  setIsOpen } = useContext(SidebarContext);
+  const [cart, setCart] = useState(() => {
+    const storedCart = localStorage.getItem('cart');
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
   const [itemNumber, setItemNumber] = useState(0);
   const [total, setTotal] = useState(0);
 
@@ -19,7 +22,7 @@ const CartProvider = ({ children }) => {
       } else {
         setIsOpen(false); 
       }
-  },[cart])
+  },[cart,setIsOpen])
 
   useEffect(()=>{
     if(cart){
@@ -29,6 +32,10 @@ const CartProvider = ({ children }) => {
       setItemNumber(amount)
     }
   },[cart])
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (record, modelNumber, id) => {
     const newItem = { ...record, amount: 1, id };
