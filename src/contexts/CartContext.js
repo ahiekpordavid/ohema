@@ -58,6 +58,7 @@ const CartProvider = ({ children }) => {
 
   const clearCart = () => {
     setCart([]);
+    setIsOpen(false); 
   };
 
   const increaseAmount = (modelNumber) => {
