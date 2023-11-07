@@ -26,7 +26,7 @@ const Header = () => {
         scrolled ? "bg-white" : "bg-blue-600"
       }`}
     >
-      <div className="flex justify-between container item-center mx-auto py-8 ">
+      <div className="flex justify-between container item-center mx-auto py-6 ">
         <Link
           to={"/"}
           className={`uppercase text-lg font-bold border-2  border-b-black border-l-black ${

@@ -43,7 +43,7 @@ const Footer = () => {
 
         <div className="py-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="footer-social-icon mb-6 flex">
+            <div className="footer-social-icon mb-4 flex">
               <span className="text-lg font-semibold block mb-2 mr-4">
                 Follow us
               </span>
@@ -56,13 +56,13 @@ const Footer = () => {
             </div>
 
             <div className="footer-widget">
-              <div className="footer-widget-heading mb-6">
+              <div className="footer-widget-heading mb-4">
                 <h3 className="text-xl font-semibold">Useful Links</h3>
               </div>
               <Link to={"./"}>Home</Link>
             </div>
             <div className="footer-widget">
-              <div className="footer-widget-heading mb-6">
+              <div className="footer-widget-heading mb-4">
                 <h3 className="text-xl font-semibold">About Us</h3>
               </div>
               <div className="footer-text mb-6">
@@ -74,7 +74,7 @@ const Footer = () => {
       </div>
       <div className=" bg-gray-700 py-6">
         <div className="text-center ">
-          <p className="text-sm">Copyright &copy; 2018, All Right Reserved</p>
+          <p className="text-sm">Copyright &copy; 2023, All Right Reserved</p>
         </div>
       </div>
     </footer>
