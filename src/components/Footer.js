@@ -1,5 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BsTwitter,BsInstagram,BsTelephone } from "react-icons/bs";
+import { IoLocationOutline } from "react-icons/io5";
+import { MdOutlineMailOutline } from "react-icons/md";
+
 
 const Footer = () => {
   return (
@@ -8,21 +12,27 @@ const Footer = () => {
         <div className="border-b border-gray-700 pb-5">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className=" flex items-center mb-6 md:mb-0">
-              <i className="fas fa-map-marker-alt text-orange-500 text-3xl"></i>
+              <div className="text-white mr-3 text-5xl">
+                <IoLocationOutline/>
+              </div>
               <div className="cta-text ">
                 <h4 className="text-lg font-semibold">Find us</h4>
                 <span>Kwashieman Traffic Light</span>
               </div>
             </div>
             <div className=" flex items-center mb-6 md:mb-0">
-              <i className="fas fa-phone text-orange-500 text-3xl"></i>
+              <div className="fas fa-phone text-white mr-3 text-5xl">
+             < BsTelephone/>
+              </div>
               <div className="cta-text ">
                 <h4 className="text-lg font-semibold">Call us</h4>
-                <span>0204573500 / 0249755457</span>
+                <span>+233204573500 / +233249755457</span>
               </div>
             </div>
             <div className=" flex items-center">
-              <i className="far fa-envelope-open text-orange-500 text-3xl"></i>
+            <div className="fas fa-phone text-white mr-3 text-5xl">
+             < MdOutlineMailOutline/>
+              </div>
               <div className="cta-text ">
                 <h4 className="text-lg font-semibold">Mail us</h4>
                 <span>imperialdankaygroup@gmail.com </span>
@@ -33,32 +43,23 @@ const Footer = () => {
 
         <div className="py-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <div className="footer-social-icon mb-6">
-                <span className="text-lg font-semibold block mb-2">
-                  Follow us
-                </span>
-                <p
-                  className="text-3xl text-white mr-4 bg-blue-800 rounded-full p-2"
-                >
-                </p>
-                <p
-                  className="text-3xl text-white mr-4 bg-blue-400 rounded-full p-2"
-                >
-                  <i className="fab fa-twitter"></i>
-                </p>
-                <p
-                  className="text-3xl text-white bg-red-600 rounded-full p-2"
-                >
-                  <i className="fab fa-google-plus-g"></i>
-                </p>
-              </div>
+            <div className="footer-social-icon mb-6 flex">
+              <span className="text-lg font-semibold block mb-2 mr-4">
+                Follow us
+              </span>
+              <p className="text-3xl text-white h-fit mr-4 bg-blue-400 rounded-full p-2">
+                <BsTwitter/>
+              </p>
+              <p className="text-3xl text-white h-fit bg-red-600 rounded-full p-2">
+                <BsInstagram />
+              </p>
             </div>
+
             <div className="footer-widget">
               <div className="footer-widget-heading mb-6">
                 <h3 className="text-xl font-semibold">Useful Links</h3>
               </div>
-              <Link to={'./'}>Home</Link>
+              <Link to={"./"}>Home</Link>
             </div>
             <div className="footer-widget">
               <div className="footer-widget-heading mb-6">
