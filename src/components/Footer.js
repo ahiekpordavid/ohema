@@ -18,14 +18,14 @@ const Footer = () => {
               <i className="fas fa-phone text-orange-500 text-3xl"></i>
               <div className="cta-text ">
                 <h4 className="text-lg font-semibold">Call us</h4>
-                <span>+233 20 0000 000</span>
+                <span>0204573500 / 0249755457</span>
               </div>
             </div>
             <div className=" flex items-center">
               <i className="far fa-envelope-open text-orange-500 text-3xl"></i>
               <div className="cta-text ">
                 <h4 className="text-lg font-semibold">Mail us</h4>
-                <span>mail@info.com</span>
+                <span>imperialdankaygroup@gmail.com </span>
               </div>
             </div>
           </div>
