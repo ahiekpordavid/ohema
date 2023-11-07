@@ -38,7 +38,7 @@ const Checkout = () => {
             <div className="flex flex-col border-r-2 border-dashed">
               <div className="flex  flex-col gap-y-2 h-[520px] w-[450px]  overflow-y-auto overflow-x-hidden border p-3 border-gray-50  bg-white mr-5">
                 {cart.map((item) => {
-                  return <CheckoutList item={item} key={item.name} />;
+                  return <CheckoutList item={item} key={item.name}/>;
                 })}
               </div>
               <div className="mr-5 py-10 w-[450px] px-10 bg-white">
@@ -184,9 +184,9 @@ const Checkout = () => {
 
                   <Form.Item className="mt-5">
                     <Button
-                      type="primary"
+                    type="primary"
                       htmlType="submit"
-                      className="flex float-right bg-green-600 font-semibold text-xl"
+                      className="flex float-right bg-green-600 font-semibold text-md text-white"
                     >
                       Submit
                     </Button>
