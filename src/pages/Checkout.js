@@ -12,9 +12,11 @@ const Checkout = () => {
   const { cart, total } = useContext(CartContext);
   const { handleClose } = useContext(SidebarContext);
   const { Option } = Select;
+  const [form] = Form.useForm();
 
   const [paymentMethod, setPaymentMethod] = useState(null);
   const [showMonthsDropdown, setShowMonthsDropdown] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handlePaymentMethodChange = (value) => {
     setPaymentMethod(value);
@@ -22,6 +24,7 @@ const Checkout = () => {
   };
 
   const handleSubmit = async (values) => {
+    setLoading(true);
     const {
       fullname,
       phoneNumber,
@@ -33,13 +36,7 @@ const Checkout = () => {
       months,
     } = values;
     const cartItems = cart.map((item) => {
-      const {
-        brandName,
-        modelName,
-        modelNumber,
-        price,
-        count,
-      } = item;
+      const { brandName, modelName, modelNumber, price, count } = item;
 
       return {
         brandName,
@@ -72,6 +69,9 @@ const Checkout = () => {
       await emailjs.send(serviceId, templateId, formData, userId);
 
       toast.success("Email sent successfully!");
+
+      setLoading(false);
+      form.resetFields(); 
     } catch (error) {
       toast.error("Error sending email");
     }
@@ -132,6 +132,7 @@ const Checkout = () => {
                   name="basic"
                   layout="vertical"
                   onFinish={handleSubmit}
+                  form={form}
                   onFinishFailed={""}
                   autoComplete="off"
                 >
@@ -255,15 +256,19 @@ const Checkout = () => {
                     </Form.Item>
                   )}
 
-                  <Form.Item className="mt-5">
-                    <Button
-                      type="primary"
-                      htmlType="submit"
-                      className="flex float-right bg-green-600 font-semibold text-md text-white"
-                    >
-                      Submit
-                    </Button>
-                  </Form.Item>
+                  {loading ? (
+                    "Sending Request"
+                  ) : (
+                    <Form.Item className="mt-5">
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        className="flex float-right bg-green-600 font-semibold text-md text-white"
+                      >
+                        Submit
+                      </Button>
+                    </Form.Item>
+                  )}
                 </Form>
               </div>
             </div>
