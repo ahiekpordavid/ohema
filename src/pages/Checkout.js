@@ -5,6 +5,8 @@ import { SidebarContext } from "../contexts/SidebarContext";
 import { Breadcrumb, Select } from "antd";
 import { Link } from "react-router-dom";
 import { Button, Form, Input } from "antd";
+import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
 
 const Checkout = () => {
   const { cart, total } = useContext(CartContext);
@@ -16,7 +18,67 @@ const Checkout = () => {
 
   const handlePaymentMethodChange = (value) => {
     setPaymentMethod(value);
-    setShowMonthsDropdown(value === "FISERVICES");
+    setShowMonthsDropdown(value === "SUPPORT SCHEME");
+  };
+
+  const handleSubmit = async (values) => {
+    const {
+      fullname,
+      phoneNumber,
+      membership,
+      address1,
+      address2,
+      paymentMethod,
+      reference,
+      months,
+    } = values;
+    const cartItems = cart.map((item) => {
+      const {
+        brandName,
+        modelNumber,
+        capacity,
+        specification,
+        price,
+        modelName,
+        amount,
+      } = item;
+
+      return {
+        brandName,
+        modelNumber,
+        capacity,
+        specification,
+        price,
+        modelName,
+        amount,
+      };
+    });
+
+    const formData = {
+      fullname,
+      phoneNumber,
+      membership,
+      address1,
+      address2,
+      paymentMethod,
+      reference,
+      months,
+      cartItems: JSON.stringify(cartItems),
+      totalAmount: total,
+      discount: 0,
+      grandTotal: total - 0,
+    };
+
+    try {
+      const serviceId = "service_2oiudbi";
+      const templateId = "template_t847smw";
+      const userId = "q7yhxn1Uq5WTrbcYf";
+      await emailjs.send(serviceId, templateId, formData, userId);
+
+      toast.success("Email sent successfully!");
+    } catch (error) {
+      toast.error("Error sending email");
+    }
   };
 
   return (
@@ -38,7 +100,7 @@ const Checkout = () => {
             <div className="flex flex-col border-r-2 border-dashed">
               <div className="flex  flex-col gap-y-2 h-[520px] w-[450px]  overflow-y-auto overflow-x-hidden border p-3 border-gray-50  bg-white mr-5">
                 {cart.map((item) => {
-                  return <CheckoutList item={item} key={item.name}/>;
+                  return <CheckoutList item={item} key={item.name} />;
                 })}
               </div>
               <div className="mr-5 py-10 w-[450px] px-10 bg-white">
@@ -73,7 +135,7 @@ const Checkout = () => {
                 <Form
                   name="basic"
                   layout="vertical"
-                  onFinish={""}
+                  onFinish={handleSubmit}
                   onFinishFailed={""}
                   autoComplete="off"
                 >
@@ -120,7 +182,7 @@ const Checkout = () => {
                   </Form.Item>
 
                   <Form.Item name="address2" label="Street Name">
-                    <Input  placeholder="Optional"/>
+                    <Input placeholder="Optional" />
                   </Form.Item>
 
                   <Form.Item
@@ -137,16 +199,16 @@ const Checkout = () => {
                     ]}
                   >
                     <Select onChange={handlePaymentMethodChange}>
-                      <Option value="WALLETSERVICES" style={{ padding: 9 }}>
+                      <Option value="CASH" style={{ padding: 9 }}>
                         Cash
                       </Option>
-                      <Option value="FISERVICES" style={{ padding: 9 }}>
+                      <Option value="SUPPORT SCHEME" style={{ padding: 9 }}>
                         Support Scheme
                       </Option>
                     </Select>
                   </Form.Item>
 
-                  {paymentMethod === "WALLETSERVICES" && (
+                  {paymentMethod === "CASH" && (
                     <div className="flex flex-row gap-1">
                       <Form.Item label="Cash URL" className=" w-full">
                         <Input placeholder="URL to Kowri" />
@@ -171,20 +233,35 @@ const Checkout = () => {
                   )}
 
                   {showMonthsDropdown && (
-                    <Form.Item label="Select Months" name="months">
+                    <Form.Item
+                      label="Select Months"
+                      name="months"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please select the number of months",
+                        },
+                      ]}
+                    >
                       <Select>
-                        {[...Array(12).keys()].map((month) => (
-                          <Option key={month + 1} value={String(month + 1)}>
-                            {month + 1} month{month !== 0 ? "s" : ""}
-                          </Option>
-                        ))}
+                        {[...Array(5).keys()].map((month) => {
+                          const value = month * 3;
+                          if (value === 0) {
+                            return null;
+                          }
+                          return (
+                            <Option key={value} value={String(value)}>
+                              {value} month{month !== 0 ? "s" : ""}
+                            </Option>
+                          );
+                        })}
                       </Select>
                     </Form.Item>
                   )}
 
                   <Form.Item className="mt-5">
                     <Button
-                    type="primary"
+                      type="primary"
                       htmlType="submit"
                       className="flex float-right bg-green-600 font-semibold text-md text-white"
                     >
