@@ -6,7 +6,7 @@ import { CartContext } from "../contexts/CartContext";
 
 const CartItem = ({ item }) => {
   const { removeFromCart,increaseAmount,decreaseAmount } = useContext(CartContext);
-  const { modelNumber, modelName,image,brandName, capacity, specification, price, amount, id ,} = item;
+  const { modelNumber, modelName,image,brandName, capacity, specification, price, count, id ,} = item;
 
   return (
     <div className="border-b py-2 mt-2 flex flex-row items-center">
@@ -38,7 +38,7 @@ const CartItem = ({ item }) => {
             <div className="cursor-pointer"onClick={()=>{decreaseAmount(modelNumber)}}>
               <BsFileMinus className="text-xl ml-2" />
             </div>
-            <p className="text-lg mx-2 underline">{amount}</p>
+            <p className="text-lg mx-2 underline">{count}</p>
             <div className="cursor-pointer" onClick={()=>{increaseAmount(modelNumber)}}>
               <BsFilePlus className="text-xl" />
             </div>
@@ -53,7 +53,7 @@ const CartItem = ({ item }) => {
             <p className="flex items-center">
               <small>GHS</small>{" "}
               <p className="font-semibold ml-1">{`${parseFloat(
-                price * amount
+                price * count
               ).toFixed(2)}`}</p>
             </p>
           </div>

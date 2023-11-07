@@ -35,22 +35,18 @@ const Checkout = () => {
     const cartItems = cart.map((item) => {
       const {
         brandName,
-        modelNumber,
-        capacity,
-        specification,
-        price,
         modelName,
-        amount,
+        modelNumber,
+        price,
+        count,
       } = item;
 
       return {
         brandName,
-        modelNumber,
-        capacity,
-        specification,
-        price,
         modelName,
-        amount,
+        modelNumber,
+        price,
+        count,
       };
     });
 

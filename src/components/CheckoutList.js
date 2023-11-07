@@ -10,7 +10,7 @@ const CartItem = ({ item }) => {
     capacity,
     specification,
     price,
-    amount,
+    count,
     id,
   } = item;
 
@@ -35,7 +35,7 @@ const CartItem = ({ item }) => {
           <div className="flex flex-row items-center">
             <small className="font-extrabold">QTY:</small>
 
-            <p className="text-lg mx-2 ">{amount}</p>
+            <p className="text-lg mx-2 ">{count}</p>
           </div>
           <div className="flex flex-col">
             <p className="flex items-center">
@@ -47,7 +47,7 @@ const CartItem = ({ item }) => {
             <p className="flex items-center">
               <small>GHS</small>{" "}
               <p className="font-semibold ml-1">{`${parseFloat(
-                price * amount
+                price * count
               ).toFixed(2)}`}</p>
             </p>
           </div>

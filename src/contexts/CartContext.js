@@ -14,7 +14,7 @@ const CartProvider = ({ children }) => {
 
   useEffect(()=>{
       const total = cart.reduce((accumulator,currentItem)=>{
-        return accumulator + currentItem.price * currentItem.amount;
+        return accumulator + currentItem.price * currentItem.count;
       },0)
       setTotal(total)
       if (cart.length > 0) {
@@ -26,10 +26,10 @@ const CartProvider = ({ children }) => {
 
   useEffect(()=>{
     if(cart){
-      const amount = cart.reduce((accumulator,currentItem)=>{
-        return accumulator + currentItem.amount;
+      const count = cart.reduce((accumulator,currentItem)=>{
+        return accumulator + currentItem.count;
       },0)
-      setItemNumber(amount)
+      setItemNumber(count)
     }
   },[cart])
 
@@ -38,14 +38,14 @@ const CartProvider = ({ children }) => {
   }, [cart]);
 
   const addToCart = (record, modelNumber, id) => {
-    const newItem = { ...record, amount: 1, id };
+    const newItem = { ...record, count: 1, id };
     const cartItem = cart.find((item) => {
       return item.modelNumber === modelNumber;
     });
     if (cartItem) {
       const newCart = [...cart].map((item) => {
         if (item.modelNumber === modelNumber) {
-          return { ...item, amount: cartItem.amount + 1, id: cartItem.id };
+          return { ...item, count: cartItem.count + 1, id: cartItem.id };
         } else {
           return item;
         }
@@ -80,14 +80,14 @@ const CartProvider = ({ children }) => {
     if (cartItem) {
       const newCart = cart.map((item) => {
         if (item.modelNumber === modelNumber) {
-          return { ...item, amount: cartItem.amount - 1 };
+          return { ...item, count: cartItem.count - 1 };
         } else {
           return item;
         }
       });
       setCart(newCart);
     }
-    if (cartItem.amount < 2) {
+    if (cartItem.count < 2) {
       removeFromCart(modelNumber);
     }
   };
