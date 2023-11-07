@@ -1,12 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { BsFileMinus, BsFilePlus } from "react-icons/bs";
-import { MdClose } from "react-icons/md";
-import { CartContext } from "../contexts/CartContext";
 
 const CartItem = ({ item }) => {
-  const { removeFromCart, increaseAmount, decreaseAmount } =
-    useContext(CartContext);
   const {
     modelNumber,
     modelName,
