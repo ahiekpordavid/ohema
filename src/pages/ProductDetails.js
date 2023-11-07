@@ -71,41 +71,50 @@ const ProductDetails = () => {
             ]}
           />
           {filteredProduct ? (
-            <div className="flex flex-col">
-              <div className="flex">
+            <div className="flex flex-row h-screen">
+              <div className="flex flex-1 flex-col mr-5">
+                <p className="py-10 uppercase text-3xl font-medium">
+                  {filteredProduct.id}
+                </p>
                 <img
-                  className="w-ful h-[300px] object-cover hover:scale-90 transition duration-300"
+                  className=" w-[300px] object-contain hover:scale-90 transition duration-300"
                   src={filteredProduct.image}
                   alt={filteredProduct.id}
                 />
-                <p className="p-10 uppercase text-3xl font-medium">
-                  {filteredProduct.id}
-                </p>
+                <div className="mr-20 mt-10 gap-5 flex flex-col">
+                  <p className="text-lg font-semibold underline">
+                    Description
+                  </p>
+                  <p>
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col gap-5">
-                <p className="text-xl font-semibold mt-[50px] underline mb-5 uppercase">
+
+              <div className="flex flex-1 flex-col gap-5 overflow-scroll">
+                <p className="text-3xl font-medium mt-[50px] underline mb-5 uppercase">
                   Brands
                 </p>
                 <div>
                   <Tabs type="card" animated={false} defaultActiveKey="1">
                     {filteredProduct?.brands?.map((brand, index) => (
-                        <Tabs.TabPane
-                          tab={brand.brandName}
-                          key={brand.brandName}
-                        >
-                          {brand?.models?.map((brand) => (
-                            <div className="mb-[30px]" key={brand?.name}>
-                              <p className=" p-5 rounded-md text-xl font-bold">
-                                {brand.name}
-                              </p>
-                              <Table
-                                columns={columns}
-                                dataSource={brand.model}
-                                pagination={false}
-                              />
-                            </div>
-                          ))}
-                        </Tabs.TabPane>
+                      <Tabs.TabPane tab={brand.brandName} key={brand.brandName}>
+                        {brand?.models?.map((brand) => (
+                          <div className="mb-[30px]" key={brand?.name}>
+                            <p className=" p-5 rounded-md text-xl font-bold">
+                              {brand.name}
+                            </p>
+                            <Table
+                              columns={columns}
+                              dataSource={brand.model}
+                              pagination={false}
+                            />
+                          </div>
+                        ))}
+                      </Tabs.TabPane>
                     ))}
                   </Tabs>
                 </div>

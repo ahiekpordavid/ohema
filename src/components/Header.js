@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { SidebarContext } from "../contexts/SidebarContext";
-import { BsBag } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
 
@@ -40,12 +39,12 @@ const Header = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="relative flex cursor-pointer"
         >
-          <BsBag
-            className={`text-2xl font-bold text-white curser-pointer ${
-              scrolled ? "text-black" : ""
+          <div
+            className={`text-md border rounded-md p-2  font-bold text-white curser-pointer ${
+              scrolled ? "text-black bg-slate-100" : ""
             }`}
-          />
-          <div className="bg-blue-500 absolute -right-2 bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
+          >View Cart</div>
+          <div className="bg-blue-500 absolute -right-2 bottom-1 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
             {itemNumber}
           </div>
         </div>
