@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Button, Form, Input } from "antd";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
+import ReceiptModal from "../components/ReceiptModal";
 
 const Checkout = () => {
   const { cart, total } = useContext(CartContext);
@@ -17,6 +18,7 @@ const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState(null);
   const [showMonthsDropdown, setShowMonthsDropdown] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [successModal, setSuccessModal] = useState(false);
 
   const handlePaymentMethodChange = (value) => {
     setPaymentMethod(value);
@@ -69,9 +71,9 @@ const Checkout = () => {
       await emailjs.send(serviceId, templateId, formData, userId);
 
       toast.success("Email sent successfully!");
-
+      setSuccessModal(true);
       setLoading(false);
-      form.resetFields(); 
+      form.resetFields();
     } catch (error) {
       toast.error("Error sending email");
     }
@@ -272,6 +274,14 @@ const Checkout = () => {
                 </Form>
               </div>
             </div>
+            {successModal && (
+              <ReceiptModal
+                open={successModal}
+                onCancel={() => {
+                  setSuccessModal(false);
+                }}
+              />
+            )}
           </div>
         </div>
       </div>

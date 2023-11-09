@@ -17,7 +17,7 @@ const Footer = () => {
               </div>
               <div className="cta-text ">
                 <h4 className="text-lg font-semibold">Find us</h4>
-                <span>Kwashieman Traffic Light</span>
+                <span>Kwashieman Christ Mission Junction</span>
               </div>
             </div>
             <div className=" flex items-center mb-6 md:mb-0">
