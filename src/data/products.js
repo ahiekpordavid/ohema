@@ -410,6 +410,170 @@ export const Products = [
           },
         ],
       },
+      {
+        brandName: "NASCO",
+        models: [
+          {
+            name: "AUDIO-SPEAKER",
+            model: [
+              {
+                modelNumber: "NAS-FST-1100WBTS",
+                capacity: "110 WATT",
+                specification:
+                  "",
+                price: "2599",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-SPEAKER"
+              },
+              {
+                modelNumber: "NAS-FST-1200WBT2",
+                capacity: "120 WATT",
+                specification:
+                  "",
+                price: "2499",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-SPEAKER"
+              },
+              {
+                modelNumber: "NAS-FST-1200WBTS",
+                capacity: "120 WATT",
+                specification: "",
+                price: "2899",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-SPEAKER"
+              }
+            ],
+          },
+          {
+            name: "AUDIO-PORTABLE SPEAKER",
+            model: [
+              {
+                modelNumber: "AUD-800WBT",
+                capacity: "800 WATT",
+                specification:
+                  "BT - FM - MIC - BLACK",
+                price: "1099",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-PORTABLE SPEAKER"
+              },
+              {
+                modelNumber: "NS-AUD-HC02",
+                capacity: "100 WATT",
+                specification:
+                  "MINI AUDIO SYSTEM 100 WATT",
+                price: "999",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-PORTABLE SPEAKER"
+              },
+              {
+                modelNumber: "NS-AUD-H50",
+                capacity: "130 WATT",
+                specification: "AUDIO SYSTEM 130 WATT",
+                price: "1999",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-PORTABLE SPEAKER"
+              },
+              {
+                modelNumber: "TW-200B",
+                capacity: "20 WATT",
+                specification: "SOUND TOWER 20 WATT",
+                price: "579",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-PORTABLE SPEAKER"
+              }
+            ],
+          },
+          {
+            name: "AUDIO-KARAOKE",
+            model: [
+              {
+                modelNumber: "NS-AUD-HC01",
+                capacity: "100 WATT",
+                specification:
+                  "KAROAKE AUDIO SYSTEM 100 WATT",
+                price: "2399",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-KARAOKE"
+              },
+              {
+                modelNumber: "H-50",
+                capacity: "100 WATT",
+                specification:
+                  "100W -BT-USB+FM-Aux-Mic",
+                price: "1499",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-KARAOKE"
+              },
+              {
+                modelNumber: "NASD-200",
+                capacity: "20 WATT",
+                specification: "NASCO PORTABLE BLUETOOTH SPK-USB-AUX-TF-FM-KARAOKE",
+                price: "399",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-KARAOKE"
+              },
+              {
+                modelNumber: "NASD-300",
+                capacity: "30 WATT",
+                specification: "NASCO PORTABLE BLUETOOTH SPK/USB-AUX-TF-FM-KARAOKE",
+                price: "499",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-KARAOKE"
+              },
+              {
+                modelNumber: "NASD-250W",
+                capacity: "25 WATT",
+                specification: "NASCO PARTY SPEAKER-MULTI COLOR-BLUETOOTH 25W RMS",
+                price: "1099",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-KARAOKE"
+              }
+            ],
+          },
+          {
+            name: "AUDIO-SOUND BAR",
+            model: [
+              {
+                modelNumber: "NAS-FSB-1200WBT",
+                capacity: "120 WATT",
+                specification:
+                  "SILVER - BT - FM - LED LIGHTS - OPTICAL CONNECTION",
+                price: "1499",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-KARAOKE"
+              }
+            ],
+          },
+          {
+            name: "HOME THEATRE-SHORT SPEAKERS",
+            model: [
+              {
+                modelNumber: "HT-506SL-N",
+                capacity: "10 WATT",
+                specification:
+                  "10W-mp3-USB-CD Ripping-Divx-FM - BT",
+                price: "549",
+                image:"https://www.electrolandgh.com/wp-content/uploads/2021/10/audio-1-300x300.jpg",
+                brandName: "NASCO",
+                modelName:"AUDIO-KARAOKE"
+              }
+            ],
+          },
+        ],
+      },
     ],
   },
     // ================   AC   =====================
